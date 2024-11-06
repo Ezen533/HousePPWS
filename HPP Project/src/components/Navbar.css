@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Markazi+Text:wght@400..700&display=swap');
+
+.headtext {
+    font-family: "Markazi Text", serif;
+    font-size:32px;
+    font-style: italic;
+    
+    font-optical-sizing: auto;
+   
+    
+}
+
+
+.aboutus-content{
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.houseimg{
+    border-radius: 20px;
+    width: 800px;
+    &:hover{
+        transform: scale(1.02);
+        transition: 0.6s ease-in-out
+    }
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.about-us-container{
+    height: 807px;
+    
+    
+}

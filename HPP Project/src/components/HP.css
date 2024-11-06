@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Markazi+Text:wght@400..700&family=Yellowtail&display=swap');
+
+body{
+    background: url(../assets/HomeImg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.homepage-container {
+    height: 807px;
+    background: url(../assets/HomeImg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(1px);
+    padding: 190px;
+    overflow: hidden;
+}
+
+.p1-animate,.p2-animate{
+    font-family: "Yellowtail", cursive;
+    font-weight: 400;
+    font-size: 140px;
+    color: white;
+    animation-name: slide;    
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    transition: transform 0.2s ease-in;
+    &:hover{
+        color: hotpink;
+    }
+    text-shadow: 0 0 20px cyan,0 0 40px cyan, 0 0 60px cyan, 0 0 100px cyan, 0 0 200px cyan;
+
+}
+
+
+
+
+@keyframes slide {
+    0%{
+        opacity: 0;
+        transform: translateX(-20%);
+        text-shadow: none;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+        text-shadow: 0 0 20px cyan,0 0 40px cyan, 0 0 60px cyan, 0 0 100px cyan, 0 0 200px cyan;
+        
+    }
+}
+

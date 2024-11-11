@@ -12,7 +12,9 @@ function Form() {
         longitude: '',
         latitude: '',
         population: '',
-        households: ''
+        households: '',
+        ocean_proximity: '', // New field for dropdown
+        median_income: ''
     });
 
     const [prediction, setPrediction] = useState(null);
@@ -177,6 +179,45 @@ function Form() {
                                 required
                             />
                         </div>
+
+                        {/* Median Income Input */}
+                        <div className="w-full px-3">
+                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="median_income">
+                                Median Income
+                            </label>
+                            <input
+                                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                id="median_income"
+                                type="number"
+                                name="median_income"
+                                value={formData.median_income}
+                                onChange={handleChange}
+                                placeholder="Enter Median Income from (1-10)"
+                                required
+                            />
+                        </div>
+
+                        {/* Ocean Proximity Dropdown */}
+                        <div className="w-full px-3">
+                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="ocean_proximity">
+                                Ocean Proximity
+                            </label>
+                            <select
+                                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                id="ocean_proximity"
+                                name="ocean_proximity"
+                                value={formData.ocean_proximity}
+                                onChange={handleChange}
+                                required
+                            >
+                                <option value="" disabled>Select Proximity</option>
+                                <option value="H OCEAN">H OCEAN(More than 1-Hour Traversal to Ocean)</option>
+                                <option value="INLAND">INLAND</option>
+                                <option value="ISLAND">ISLAND</option>
+                                <option value="NEAR BAY">NEAR BAY</option>
+                                <option value="NEAR OCEAN">NEAR OCEAN</option>
+                            </select>
+                        </div>
                     </div>
 
                     {/* Submit Button */}
@@ -200,7 +241,7 @@ function Form() {
                 {/* Display prediction result */}
                 {prediction !== null && (
                     <div className="mt-6">
-                        <h2 className="text-lg font-bold">Prediction Result:</h2>
+                        <h2 className="text-lg font-bold">House Price Prediction Result is ₹</h2>
                         <p className="text-gray-700">{prediction}</p>
                     </div>
                 )}
